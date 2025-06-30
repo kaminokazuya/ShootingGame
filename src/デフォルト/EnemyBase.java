@@ -11,16 +11,16 @@ public class EnemyBase extends Enemy {
 		if (x>300) vx=-GameWorld.stage;
 		if (x<100) vx=GameWorld.stage;
 		if (Math.random()<0.01) {
-			GameWorld.enemies.add(new StraightEnemy(x,y,0,1+GameWorld.stage));
+			GameWorld.enemies.add(new StraightEnemy(x,y,0,1+GameWorld.stage/2));
 		}
 		if (Math.random()<0.01) {
-			GameWorld.enemies.add(new RandomEnemy(x,y,0,GameWorld.stage));
+			GameWorld.enemies.add(new RandomEnemy(x,y,0,1+GameWorld.stage/2));
 		}
 		if (Math.random()<0.01) {
-			GameWorld.enemies.add(new DropEnemy(x,y,0,GameWorld.stage));
+			GameWorld.enemies.add(new DropEnemy(x,y,0,1+GameWorld.stage/2));
 		}
 		if (Math.random()<0.01) {
-			GameWorld.enemies.add(new CurveEnemy(x,y,0,GameWorld.stage));
+			GameWorld.enemies.add(new CurveEnemy(x,y,0,1+GameWorld.stage/2));
 		}
 	}
 	public void draw(MyFrame f) {
