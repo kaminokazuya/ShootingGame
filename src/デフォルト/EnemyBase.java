@@ -3,7 +3,7 @@ package デフォルト;
 public class EnemyBase extends Enemy {
 	public EnemyBase(double x, double y, double vx, double vy) {
 		super(x, y, vx, vy);
-		life=20;
+		life=20+GameWorld.stage-1;
 		score=10;
 	}
 	public void move() {
@@ -21,6 +21,9 @@ public class EnemyBase extends Enemy {
 		}
 		if (Math.random()<0.01) {
 			GameWorld.enemies.add(new CurveEnemy(x,y,0,1+GameWorld.stage/2));
+		}
+		if (Math.random()<0.01) {
+			GameWorld.enemies.add(new SlantingEnemy(x,y,1+GameWorld.stage,1+GameWorld.stage/2));
 		}
 	}
 	public void draw(MyFrame f) {
